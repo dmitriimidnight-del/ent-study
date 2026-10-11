@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "lessons": [
+    {
+      "id": "natural-numbers",
+      "title": "Натуральные числа",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "numbers"
+    },
+    {
+      "id": "comparison-of-numbers",
+      "title": "Сравнение чисел",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "numbers"
+    },
+    {
+      "id": "addition-subtraction",
+      "title": "Сложение и вычитание",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "numbers"
+    },
+    {
+      "id": "multiplication-division",
+      "title": "Умножение и деление",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "numbers"
+    },
+    {
+      "id": "order-of-operations",
+      "title": "Порядок действий",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "numbers"
+    },
+    {
+      "id": "parentheses",
+      "title": "Скобки",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "numbers"
+    },
+    {
+      "id": "divisibility",
+      "title": "Делимость чисел",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "numbers"
+    },
+    {
+      "id": "common-fractions",
+      "title": "Обыкновенные дроби",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "fractions"
+    },
+    {
+      "id": "proper-improper-fractions",
+      "title": "Правильные и неправильные дроби",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "fractions"
+    },
+    {
+      "id": "mixed-numbers",
+      "title": "Смешанные числа",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "fractions"
+    },
+    {
+      "id": "fraction-comparison",
+      "title": "Сравнение дробей",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "fractions"
+    },
+    {
+      "id": "fraction-addition",
+      "title": "Сложение дробей",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "fractions"
+    },
+    {
+      "id": "fraction-subtraction",
+      "title": "Вычитание дробей",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "fractions"
+    },
+    {
+      "id": "fraction-multiplication",
+      "title": "Умножение дробей",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "fractions"
+    },
+    {
+      "id": "fraction-division",
+      "title": "Деление дробей",
+      "subjectId": "math",
+      "sectionId": "base",
+      "topicId": "fractions"
+    },
+    {
+      "id": "physical-quantities-units",
+      "title": "Физические величины и единицы измерения",
+      "subjectId": "phys",
+      "sectionId": "phys-intro",
+      "topicId": "phys-quantities"
+    },
+    {
+      "id": "measurements-errors",
+      "title": "Измерения и погрешности",
+      "subjectId": "phys",
+      "sectionId": "phys-intro",
+      "topicId": "phys-measurements"
+    },
+    {
+      "id": "trajectory-path-displacement",
+      "title": "Траектория, путь и перемещение",
+      "subjectId": "phys",
+      "sectionId": "phys-intro",
+      "topicId": "phys-trajectory"
+    },
+    {
+      "id": "speed",
+      "title": "Скорость",
+      "subjectId": "phys",
+      "sectionId": "phys-mechanics",
+      "topicId": "phys-speed"
+    },
+    {
+      "id": "uniform-motion",
+      "title": "Равномерное движение",
+      "subjectId": "phys",
+      "sectionId": "phys-mechanics",
+      "topicId": "phys-uniform-motion"
+    },
+    {
+      "id": "acceleration",
+      "title": "Ускорение",
+      "subjectId": "phys",
+      "sectionId": "phys-mechanics",
+      "topicId": "phys-acceleration"
+    },
+    {
+      "id": "nonuniform-motion",
+      "title": "Неравномерное движение и средняя скорость",
+      "subjectId": "phys",
+      "sectionId": "phys-mechanics",
+      "topicId": "phys-nonuniform-motion"
+    }
+  ]
+}
