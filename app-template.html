@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EDF1F7">
+<title>Математика к ЕНТ</title>
+<style>
+:root{--bg:#EDF1F7;--grid:#D5DEEB;--card:#fff;--ink:#14213D;--mute:#5B6B86;--line:#C7D2E3;--acc:#1F4FD8;--accbg:#E3EAFB;--ok:#1E7A4C;--okbg:#DDF3E7;--bad:#B3322F;--badbg:#FBE3E1;--mark:#FFE066;--margin:#E26A6A;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1626;--grid:#1A2540;--card:#17213A;--ink:#E8EEF9;--mute:#93A3C0;--line:#2B3A5C;--acc:#7FA2FF;--accbg:#1E2C52;--ok:#5FD39A;--okbg:#153326;--bad:#FF8B86;--badbg:#3A1C1D;--mark:#8A7414}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg)}
+body{margin:0;font:16px/1.5 var(--sans);color:var(--ink);background:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;min-height:100vh;padding-bottom:env(safe-area-inset-bottom,0)}
+.wrap{max-width:640px;margin:0 auto;padding:0 14px 40px}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:2px solid var(--ink);padding:env(safe-area-inset-top,0) 14px 0}
+.bar{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:6px;min-height:56px}
+.back{width:44px;height:44px;border:0;background:none;color:var(--ink);font-size:26px;cursor:pointer;border-radius:10px}
+.back:active{background:var(--accbg)}
+.bar h1{font:700 19px/1.2 var(--serif);margin:0;flex:1}
+h2{font:700 22px/1.25 var(--serif);margin:22px 0 4px}
+h3{font:700 17px/1.3 var(--serif);margin:0 0 8px}
+.sub{color:var(--mute);margin:0 0 14px;font-size:15px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px 14px;margin:0 0 12px}
+a.row,button.row{display:block;width:100%;text-align:left;font:inherit;color:inherit;text-decoration:none;cursor:pointer}
+.row{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px;margin:0 0 10px;min-height:56px}
+.row:active{border-color:var(--acc);background:var(--accbg)}
+.row.off{opacity:.55;cursor:default}
+.row.off:active{border-color:var(--line);background:var(--card)}
+.row .t{font-weight:650;display:flex;justify-content:space-between;gap:10px}
+.row .h{color:var(--mute);font-size:14px;margin-top:2px}
+.pb{height:6px;background:var(--line);border-radius:3px;margin-top:10px;overflow:hidden}
+.pb i{display:block;height:100%;background:var(--acc);border-radius:3px}
+.pb.full i{background:var(--ok)}
+.tag{font-size:13px;color:var(--mute);white-space:nowrap}
+.tabs{display:flex;gap:6px;margin:14px 0}
+.tabs a{flex:1;text-align:center;padding:11px 4px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+.tabs a.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.th{border-left:3px solid var(--margin);border-radius:4px 12px 12px 4px}
+.th p{margin:0 0 8px}
+.th p:last-child{margin:0}
+.th p.b{padding-left:14px;text-indent:-14px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.cmp div{border-radius:10px;padding:10px}
+.cmp .y{background:var(--okbg)}.cmp .n{background:var(--badbg)}
+.cmp b{display:block;font-size:14px;margin-bottom:4px}
+.cmp span{display:inline-block;margin:2px 8px 2px 0;font-variant-numeric:tabular-nums}
+.note{background:var(--mark);padding:8px 10px;border-radius:8px;font-size:15px;margin-top:8px}
+.ex .e{font:700 20px/1.3 var(--serif);font-variant-numeric:tabular-nums}
+details summary{cursor:pointer;color:var(--acc);font-weight:600;padding:8px 0 2px;min-height:40px}
+details ol{margin:6px 0 0;padding-left:22px}
+details li{margin:3px 0}
+.q{font:700 21px/1.35 var(--serif);margin:6px 0 14px}
+.lv{display:flex;justify-content:space-between;align-items:center;color:var(--mute);font-size:14px;margin-bottom:6px}
+.dots i{display:inline-block;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--mute);margin-left:4px}
+.dots i.on{background:var(--mute)}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:17px;padding:13px 14px;margin:0 0 8px;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;cursor:pointer;min-height:50px}
+.opt:active:not(:disabled){border-color:var(--acc)}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}
+.opt.bad{background:var(--badbg);border-color:var(--bad)}
+.opt:disabled{cursor:default}
+input.ans{width:100%;font:inherit;font-size:20px;padding:13px 14px;border:2px solid var(--ink);border-radius:10px;background:var(--card);color:var(--ink);margin-bottom:10px}
+input.ans:focus{outline:3px solid var(--acc);outline-offset:1px}
+.btn{display:block;width:100%;font:inherit;font-weight:650;font-size:17px;padding:14px;border-radius:10px;border:2px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer;margin-top:8px;min-height:50px}
+.btn.sec{background:var(--card);color:var(--ink)}
+.btn:active{opacity:.85}
+.fb{border-radius:10px;padding:12px;margin-top:10px}
+.fb.ok{background:var(--okbg);border:1.5px solid var(--ok)}
+.fb.bad{background:var(--badbg);border:1.5px solid var(--bad)}
+.fb b{display:block;margin-bottom:4px}
+.big{font:700 44px/1 var(--serif);margin:6px 0}
+.reset{margin-top:26px;background:none;border:0;color:var(--mute);text-decoration:underline;font:inherit;font-size:14px;cursor:pointer;padding:10px 0}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){.pb i{transition:width .3s}}
+</style>
+</head>
+<body>
+<header><div class="bar"><button class="back" id="back" aria-label="Назад">←</button><h1 id="ttl">Математика к ЕНТ</h1></div></header>
+<main class="wrap" id="app"></main>
+<script>
+const DATA = /*__DATA__*/null;
+const KEY = 'ent.math.v1';
+let S = { lessons: {} };
+try { S = JSON.parse(localStorage.getItem(KEY)) || S; } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+const dec = s => String(s).replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+function h(tag, attrs, ...kids) {
+  const e = document.createElement(tag);
+  for (const k in attrs || {}) {
+    const v = attrs[k];
+    if (k === 'class') e.className = v;
+    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
+    else if (v !== false && v != null) e.setAttribute(k, v === true ? '' : v);
+  }
+  for (const c of kids.flat(Infinity)) {
+    if (c == null || c === false) continue;
+    e.append(c.nodeType ? c : document.createTextNode(dec(c)));
+  }
+  return e;
+}
+const LESSON = {};
+DATA.lessons.forEach(l => LESSON[l.id] = l);
+DATA.sections.forEach(s => s.topics.forEach(t => {
+  t.ids = t.lessons.map(title => (DATA.lessons.find(l => l.topic === t.id && l.title === title) || {}).id || null);
+}));
+const findTopic = id => { for (const s of DATA.sections) for (const t of s.topics) if (t.id === id) return { s, t }; };
+const lessonOk = id => ((S.lessons[id] || {}).ok || []).length;
+const lessonPct = id => id ? lessonOk(id) / LESSON[id].tasks.length : 0;
+const topicPct = t => t.ids.reduce((a, id) => a + lessonPct(id), 0) / t.ids.length;
+const topicAvail = t => t.ids.filter(Boolean).length;
+const secPct = s => s.topics.reduce((a, t) => a + topicPct(t) * t.ids.length, 0) / s.topics.reduce((a, t) => a + t.ids.length, 0);
+const pct = x => Math.round(x * 100);
+const bar = x => h('div', { class: 'pb' + (x >= 0.999 ? ' full' : '') }, h('i', { style: 'width:' + pct(x) + '%' }));
+const norm = s => String(s).toLowerCase().replace(/\s+/g, '').replace(/[−–—]/g, '-').replace(/,/g, '.').replace(/\.$/, '');
+
+const $app = document.getElementById('app');
+const $ttl = document.getElementById('ttl');
+let backHref = null;
+document.getElementById('back').onclick = () => { if (backHref) location.hash = backHref; };
+function screen(title, back, ...kids) {
+  $ttl.textContent = dec(title);
+  document.title = dec(title) + ' — ЕНТ';
+  backHref = back;
+  document.getElementById('back').style.visibility = back ? 'visible' : 'hidden';
+  $app.replaceChildren(...kids.flat(Infinity).filter(Boolean));
+  window.scrollTo(0, 0);
+}
+
+function home() {
+  const total = DATA.sections.reduce((a, s) => a + s.topics.reduce((b, t) => b + t.ids.length, 0), 0);
+  const avail = DATA.lessons.length;
+  screen('Математика к ЕНТ', null,
+    h('h2', null, 'Разделы'),
+    h('p', { class: 'sub' }, 'Уроков в приложении: ' + avail + ' из ' + total + '. Остальные темы добавляются поэтапно.'),
+    DATA.sections.map(s => {
+      const n = s.topics.reduce((a, t) => a + topicAvail(t), 0);
+      return h('a', { class: 'row' + (n ? '' : ' off'), href: n ? '#/s/' + s.id : null },
+        h('div', { class: 't' }, h('span', null, s.title), h('span', { class: 'tag' }, n ? pct(secPct(s)) + '%' : 'скоро')),
+        h('div', { class: 'h' }, s.hint), n ? bar(secPct(s)) : null);
+    }),
+    h('button', { class: 'reset', onclick: () => { if (confirm('Стереть весь прогресс?')) { S = { lessons: {} }; save(); home(); } } }, 'Сбросить прогресс'));
+}
+
+function section(id) {
+  const s = DATA.sections.find(x => x.id === id);
+  if (!s) return home();
+  screen(s.title, '#/', h('p', { class: 'sub', style: 'margin-top:16px' }, s.hint),
+    s.topics.map(t => {
+      const n = topicAvail(t);
+      return h('a', { class: 'row' + (n ? '' : ' off'), href: n ? '#/t/' + t.id : null },
+        h('div', { class: 't' }, h('span', null, t.title), h('span', { class: 'tag' }, n ? n + ' из ' + t.ids.length + ' ур.' : 'скоро')),
+        h('div', { class: 'h' }, t.hint), n ? bar(topicPct(t)) : null);
+    }));
+}
+
+function topic(id) {
+  const f = findTopic(id);
+  if (!f) return home();
+  const { s, t } = f;
+  screen(t.title, '#/s/' + s.id, h('p', { class: 'sub', style: 'margin-top:16px' }, t.hint),
+    t.lessons.map((title, i) => {
+      const lid = t.ids[i];
+      if (!lid) return h('div', { class: 'row off' }, h('div', { class: 't' }, h('span', null, title), h('span', { class: 'tag' }, 'скоро')));
+      const L = LESSON[lid], ok = lessonOk(lid), p = lessonPct(lid);
+      return h('a', { class: 'row', href: '#/l/' + lid },
+        h('div', { class: 't' }, h('span', null, title), h('span', { class: 'tag' }, ok + '/' + L.tasks.length)),
+        h('div', { class: 'h' }, L.desc), bar(p));
+    }));
+}
+
+function lesson(id, tab) {
+  const L = LESSON[id];
+  if (!L) return home();
+  tab = ['theory', 'examples', 'tasks'].includes(tab) ? tab : 'theory';
+  const tabs = h('nav', { class: 'tabs' }, [['theory', 'Теория'], ['examples', 'Примеры'], ['tasks', 'Задачи']].map(([k, n]) =>
+    h('a', { href: '#/l/' + id + '/' + k, class: k === tab ? 'on' : '' }, n)));
+  const head = [h('h2', null, L.title), h('p', { class: 'sub' }, L.desc), tabs];
+  const back = '#/t/' + L.topic;
+  if (tab === 'theory') {
+    screen(L.title, back, head,
+      L.theory.map(b => h('section', { class: 'card th' }, h('h3', null, b.title),
+        b.text.map(p => h('p', { class: p.startsWith('• ') ? 'b' : '' }, p)))),
+      L.compare ? compareCard(L.compare) : null,
+      h('a', { class: 'btn', href: '#/l/' + id + '/examples', style: 'text-align:center;text-decoration:none' }, 'К примерам'));
+  } else if (tab === 'examples') {
+    screen(L.title, back, head,
+      L.examples.map(e => h('div', { class: 'card ex' }, h('div', { class: 'e' }, e.expr),
+        h('details', null, h('summary', null, 'Показать решение'), h('ol', null, e.steps.map(st => h('li', null, st)))))),
+      h('a', { class: 'btn', href: '#/l/' + id + '/tasks', style: 'text-align:center;text-decoration:none' }, 'К задачам'));
+  } else {
+    screen(L.title, back, head, h('div', { id: 'tr' }));
+    startTrainer(id);
+  }
+}
+
+function compareCard(c) {
+  return h('section', { class: 'card th' }, h('h3', null, c.title),
+    h('div', { class: 'cmp' },
+      h('div', { class: 'y' }, h('b', null, c.yesLabel), c.yes.map(x => h('span', null, x))),
+      h('div', { class: 'n' }, h('b', null, c.noLabel), c.no.map(x => h('span', null, x)))),
+    h('div', { class: 'note' }, c.note));
+}
+
+/* ---------- тренажёр ---------- */
+function startTrainer(id) {
+  const L = LESSON[id];
+  const st = S.lessons[id] || (S.lessons[id] = { ok: [], miss: [] });
+  let order = L.tasks.map((_, i) => i).filter(i => !st.ok.includes(i));
+  const replay = order.length === 0;
+  if (replay) order = L.tasks.map((_, i) => i);
+  let pos = 0, sessOk = 0;
+  const root = document.getElementById('tr');
+
+  function finish() {
+    const nextId = nextLesson(id);
+    root.replaceChildren(h('div', { class: 'card' },
+      h('h3', null, replay ? 'Повтор завершён' : 'Урок пройден'),
+      h('div', { class: 'big' }, sessOk + ' из ' + order.length),
+      h('p', { class: 'sub' }, 'верно с первой попытки. Всего решено в уроке: ' + st.ok.length + ' из ' + L.tasks.length + '.')),
+      h('button', { class: 'btn sec', onclick: () => lesson(id, 'tasks') }, 'Пройти ещё раз'),
+      nextId ? h('a', { class: 'btn', href: '#/l/' + nextId, style: 'text-align:center;text-decoration:none' }, 'Следующий урок') :
+        h('a', { class: 'btn', href: '#/t/' + L.topic, style: 'text-align:center;text-decoration:none' }, 'К списку уроков'));
+  }
+
+  function show() {
+    if (pos >= order.length) return finish();
+    const idx = order[pos], T = L.tasks[idx];
+    let firstTry = true, done = false;
+    const mist = {};
+    Object.keys(T.mistakes || {}).forEach(k => mist[norm(k)] = T.mistakes[k]);
+    const fb = h('div');
+    const dots = h('span', { class: 'dots' }, [1, 2, 3].map(n => h('i', { class: n <= (T.level || 1) ? 'on' : '' })));
+    const box = h('div', { class: 'card' },
+      h('div', { class: 'lv' }, h('span', null, 'Задача ' + (pos + 1) + ' из ' + order.length), dots),
+      h('div', { class: 'q' }, T.q));
+    let input = null;
+
+    function solved() {
+      done = true;
+      if (!st.ok.includes(idx)) st.ok.push(idx);
+      if (firstTry) sessOk++;
+      save();
+      fb.replaceChildren(h('div', { class: 'fb ok' }, h('b', null, 'Верно'), T.explain),
+        h('button', { class: 'btn', onclick: () => { pos++; show(); } }, pos + 1 < order.length ? 'Дальше' : 'Завершить'));
+    }
+    function wrong(given) {
+      if (firstTry) { firstTry = false; if (!st.miss.includes(idx)) st.miss.push(idx); save(); }
+      const hint = mist[norm(given)];
+      fb.replaceChildren(h('div', { class: 'fb bad' }, h('b', null, 'Неверно'), hint || 'Проверьте вычисления и попробуйте ещё раз.'),
+        h('button', { class: 'btn sec', onclick: () => { fb.replaceChildren(); if (input) { input.value = ''; input.focus(); } else box.querySelectorAll('.opt').forEach(b => { b.disabled = false; b.classList.remove('bad'); }); } }, 'Попробовать ещё'),
+        h('button', { class: 'btn sec', onclick: reveal }, 'Показать решение'));
+    }
+    function reveal() {
+      done = true;
+      if (input) input.disabled = true;
+      box.querySelectorAll('.opt').forEach(b => { b.disabled = true; if (norm(b.textContent) === norm(T.answer)) b.classList.add('ok'); });
+      fb.replaceChildren(h('div', { class: 'fb bad' }, h('b', null, 'Ответ: ' + T.answer), T.explain),
+        h('button', { class: 'btn', onclick: () => { pos++; show(); } }, pos + 1 < order.length ? 'Дальше' : 'Завершить'));
+    }
+
+    if (T.options) {
+      T.options.forEach(o => {
+        const b = h('button', { class: 'opt' }, o);
+        b.addEventListener('click', () => {
+          if (done) return;
+          if (norm(o) === norm(T.answer)) { b.classList.add('ok'); box.querySelectorAll('.opt').forEach(x => x.disabled = true); solved(); }
+          else { b.classList.add('bad'); b.disabled = true; wrong(o); }
+        });
+        box.append(b);
+      });
+    } else {
+      input = h('input', { class: 'ans', type: 'text', inputmode: 'text', autocomplete: 'off', autocapitalize: 'off', placeholder: 'Ответ', 'aria-label': 'Ответ' });
+      const check = () => {
+        if (done || !input.value.trim()) return;
+        if (norm(input.value) === norm(T.answer)) { input.disabled = true; solved(); } else wrong(input.value);
+      };
+      input.addEventListener('keydown', e => { if (e.key === 'Enter') check(); });
+      box.append(input, h('button', { class: 'btn', onclick: check }, 'Проверить'));
+    }
+    box.append(fb);
+    root.replaceChildren(box);
+  }
+  show();
+}
+
+function nextLesson(id) {
+  const L = LESSON[id], f = findTopic(L.topic);
+  const i = f.t.ids.indexOf(id);
+  for (let j = i + 1; j < f.t.ids.length; j++) if (f.t.ids[j]) return f.t.ids[j];
+  return null;
+}
+
+function router() {
+  const p = location.hash.split('/');
+  const kind = p[1], id = p[2];
+  if (kind === 's') section(id);
+  else if (kind === 't') topic(id);
+  else if (kind === 'l') lesson(id, p[3]);
+  else home();
+}
+window.addEventListener('hashchange', router);
+router();
+</script>
+</body>
+</html>
